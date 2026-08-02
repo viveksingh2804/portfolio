@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root.dark {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+::selection {
+  background: rgba(103, 232, 249, 0.45);
+}
+
+@layer components {
+  .glass-panel {
+    @apply rounded-[1.75rem] border border-white/60 bg-white/50 shadow-glass backdrop-blur-2xl dark:border-white/10 dark:bg-white/10;
+  }
+
+  .glass-card {
+    @apply rounded-[1.75rem] border border-white/60 bg-white/45 shadow-glass backdrop-blur-2xl dark:border-white/10 dark:bg-white/[0.08];
+  }
+
+  .primary-button {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white shadow-glass transition hover:-translate-y-0.5 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-transparent dark:bg-white dark:text-ink dark:hover:bg-cyan-50;
+  }
+
+  .secondary-button {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/65 bg-white/50 px-6 py-3 text-sm font-semibold text-ink shadow-glass backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white/75 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-transparent dark:border-white/10 dark:bg-white/10 dark:text-white dark:hover:bg-white/15;
+  }
+
+  .icon-button {
+    @apply grid h-11 w-11 place-items-center rounded-full border border-white/60 bg-white/50 text-ink shadow-glass backdrop-blur-xl transition hover:bg-white/80 focus:outline-none focus:ring-2 focus:ring-cyan-400 dark:border-white/10 dark:bg-white/10 dark:text-white dark:hover:bg-white/15;
+  }
+
+  .icon-link {
+    @apply grid h-12 w-12 place-items-center rounded-full border border-white/60 bg-white/50 text-ink shadow-glass backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white/80 dark:border-white/10 dark:bg-white/10 dark:text-white dark:hover:bg-white/15;
+  }
+
+  .icon-badge {
+    @apply grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-white/60 bg-white/55 text-cyan-700 shadow-sm dark:border-white/10 dark:bg-white/10 dark:text-cyan-200;
+  }
+
+  .skill-pill {
+    @apply rounded-full border border-white/60 bg-white/55 px-3 py-1.5 text-xs font-semibold text-slate-700 backdrop-blur-xl dark:border-white/10 dark:bg-white/10 dark:text-slate-200;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
